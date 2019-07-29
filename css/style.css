@@ -1,0 +1,239 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: black;
+  text-decoration: none;
+}
+.topNavBar{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.topNavBar ul{
+  list-style-type: none;
+  padding-right: 16px;
+}
+
+.topNavBar nav{
+  float: right;
+  padding-top: 7px;
+  
+}
+
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.topNavBar  li {
+  float: left;
+  margin: 0px 17px;
+  
+}
+
+.topNavBar  li a{
+ 
+  display: block;
+  padding:5px 0;
+  border-top: 3px solid transparent;
+  border-bottom:3px solid transparent;
+  color: #b7b7b7;
+  font-size: 12px;
+}
+
+.topNavBar  li a:hover{
+
+  border-bottom:3px solid orange;
+}
+
+
+
+
+.logo{
+  
+    padding-left: 16px;
+    font-size: 24px;
+    font-family: 'Arial Black';
+
+}
+
+.hy{
+  color:#e6686a;
+  padding-right: 3px;
+}
+.main{
+  position: relative;
+}
+.card{
+    color: #9a9da2;
+}
+
+.banner{
+
+
+  height: 515px;
+  background-image: url(../img/top-bg.jpg)  ;
+  background-size: cover;
+  position: relative;
+}
+
+.banner::before{
+
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 51, 64, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+.profilePicture{
+
+  height: 343px;
+  width:296px;
+  margin: 50px 0 0 50px;
+  background-size: cover;
+  background-image: url(../img/man2.jpg);
+}
+.profilePicture:hover{
+  background-image: url(../img/man.jpg);
+}
+main{
+  position: relative;
+ 
+}
+
+.useCard{
+
+  margin: 0 auto;
+  
+  max-width: 940px;
+  position: relative;
+  top: -300px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  
+}
+.useCard svg{
+  width: 35px;
+    height: 35px;
+    margin-top: 2px;
+    fill: white;
+    vertical-align: top;
+    
+}
+.useCard .me{
+  float: left;
+  padding: 40px;
+  padding-left: 66px;
+  
+}
+
+.useCard .profilePicture{
+    float: left;
+
+}
+
+.useCard dl{
+
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid #dedede;
+}
+
+.useCard dd,dt{
+    float: left;
+    padding: 12px 0;
+
+}
+
+.useCard dd{
+
+  width: 40%;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.useCard dt{
+
+    width:60%;
+    font-size: 15px;
+    color: #9da0a7;
+}
+
+
+main .foot{
+  width: 100%;
+  margin-top: 50px;
+  float: left;
+  background-color: #e8676b;
+  text-align: center;
+
+
+}
+main .foot a{
+  display: inline-block;
+    width: 50px;
+    line-height: 40px;
+    padding: 5px 0;
+    border-radius: 50%;
+    margin: 16px 70px;
+}
+
+main .foot a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+#yin-yang {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #eee;
+  border-color: red;
+  border-style: solid;
+  border-width:  2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#yin-yang::before{
+  content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    background-color: #eee;
+    border: 18px solid red;
+
+    border-radius: 100%;
+    z-index: 2;
+
+  }
+
+
+#yin-yang::after{
+
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: red;
+  border: 18px solid #eee;
+
+  border-radius: 100%;
+  z-index: 2;
+}
