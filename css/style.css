@@ -133,9 +133,12 @@ main{
 }
 .useCard .me{
   float: left;
-  padding: 40px;
+  padding: 50px;
   padding-left: 66px;
   
+}
+.useCard .me h1{
+  margin-top: 25px;
 }
 
 .useCard .profilePicture{
@@ -194,3 +197,34 @@ main .foot a:hover{
 }
 
 
+.hello{
+
+    background-color: #e8676b;
+    width: 50px;
+    text-align: center;
+    padding: 3px 10px;
+    position: relative;
+    margin-bottom: 10px;
+    
+
+}
+.hello span{
+  color: #fff;
+
+}
+
+.hello::before{
+  
+    content: '';
+   
+    
+      width: 0;
+      height: 0;
+      border-top: 10px solid #e8676b;
+
+      border-right: 10px solid transparent;
+      position: absolute;
+      top:100%;
+   
+
+}
