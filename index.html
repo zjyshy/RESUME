@@ -87,32 +87,89 @@
       
      
     </main>
-    <a class = "downloadResume" href="#" download>下载我的简历</a>
+
+<div class="downloadResumeWrapper">
+    <a class="downloadResume" href="#" download>下载我的简历</a>
+  </div>
+    
     <p></p>
-    <section>
+    <section class="skillWrapper">
       <h2>技能</h2>
 
+    <ol class="skill clearfix">
+      <li>
+        <p>HTML&#38;CSS</p>
+        <div><div></div></div>
+      </li>
+      <li>
+        <p>JavaScript</p>
+        <div><div></div></div>
+      </li>
+      <li>
+        <p>Jquery</p>
+        <div><div></div></div>
+      </li>
+      <li>
+        <p>Node.js</p>
+        <div><div></div></div>
+      </li>
+      <li>
+        <p>React.js </p>
+        <div><div></div></div>
+      </li>
+      <li>
+        <p>Vue.js</p>
+        <div><div></div></div>
+      </li>
+    </ol>
+
     </section>
-    <section>
+    <section class="jobs">
       <h2>作品集</h2>
-      <nav>
-        <ul>
-          <li>ALL</li>
-          <li>框架</li>
-          <li>原生</li>
-          <li>CSS</li>
+      <nav class="jobsNav">
+        <ul class="clearfix">
+          <li id="allJobs">ALL</li>
+          <li id="strJob">框架</li>
+          <li id="JSJob">原生</li>
+          <li id="cssJob">CSS</li>
         </ul>
-
-        <div class="jobs">
-          <div></div>
-          <div>
-
-          </div>
-
-        </div>
+        <div class="jobsBar" id="jobsBar" ></div>
+       
+          
       </nav>
+      <script>
+
+        allJobs.onclick=function(){
+          
+          jobsBar.className = "jobsBar";
+        }
+        strJob.onclick = function(){
+          jobsBar.className = "jobsBar2";
+        }
+        JSJob.onclick = function(){
+          jobsBar.className = "jobsBar3";
+        }
+        cssJob.onclick = function(){
+          jobsBar.className = "jobsBar4";
+
+        }
+
+      </script>
+
+
+      <div class="works clearfix">
+        <div class="worksLeft">
+          <img src="img/1.jpg" alt="">
+        </div>
+        <div class="worksRight">
+          <img src="img/2.jpg" alt="">
+          <img src="img/3.jpg" alt="">
+        </div>
+      </div>
 
     </section>
+
+
 
   </body>
 </html>
