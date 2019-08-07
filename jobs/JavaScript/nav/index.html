@@ -10,7 +10,9 @@
 <body>
   
   <main>  
-    <div class="wrapper" id="main"></div>
+    <div class="wrapper" id="main">
+
+    </div>
   </main>
 
 </body>
@@ -38,12 +40,16 @@ var hashInlocalStorage = JSON.parse(localStorage.getItem("hash") || null);
 if(hashInlocalStorage){
   hash = hashInlocalStorage;
 }
+
+
 for(let i = 0; i<keys.length;i++){
 
   
   var div1 = document.createElement('div');
-  div1.className = "row";
   var row = keys[i];
+
+  div1.className = "row";
+
 
   for(let j = 0;j < row.length;j++){
 
@@ -51,99 +57,138 @@ for(let i = 0; i<keys.length;i++){
     var kbdSpan = document.createElement('span');
     var editButton = document.createElement('button'); 
 
-    kbdSpan.className = "kbdName";
 
+
+    kbdSpan.className = "kbdName";
     editButton.textContent = "+";
     editButton.id = row[j];
+   
+
+   
+
     editButton.onclick = function(argument){
 
       var  userInputContent = prompt("输入一个网址吧");
 
       key = argument.target.id;
-      hash[key] = userInputContent;
-      localStorage.setItem('hash',JSON.stringify(hash));
+      addInLocal(key,userInputContent);
+      
 
 }
+
+
 
     kbdSpan.textContent = row[j];//这一句和下面的一句不可以写反，不然会被这一句将内容覆盖掉
     kbd.appendChild(kbdSpan);
     kbd.appendChild(editButton);
-
     div1.appendChild(kbd);
-    
+    faviconImg(row[j],kbd);
+
   }
   main.appendChild(div1);
 }
 
 
-let aaa = 7;
-{
-  console.log(aaa);
-}
+
+  
 
 document.onkeypress = function(){
 
   var key = arguments[0].key;
-  console.log(arguments[0]);
   website = hash[key];
-  if(arguments[0].ctrlKey  ){//按下ctrl可以直接更改记录的网址
-    if(!hash[key]){//如果是空的显示
+
+
+  if(arguments[0].ctrlKey){//按下ctrl可以直接更改记录的网址
+    if(!hash[key]){
+      //如果是空的显示
       
       var  userInputContent = prompt("还没有添加内容呢");
 
     }else{//如果已经添加了内容
 
       var  userInputContent = prompt("要改成什么呢");
+  
     }
     
-      hash[key] = userInputContent;
-      localStorage.setItem('hash',JSON.stringify(hash));
+    addInLocal(key,userInputContent);
+    faviconImg(key);
 
     
-  }else if(arguments[0].shiftKey ){//按下shift可以删除记录的网址
+  }else if(arguments[0].shiftKey ){
+    
+    //按下shift可以删除记录的网址
+   
     var  upKey = key.toLowerCase();
-    if(!hash[upKey]){//如果是空的显示
+
+    if(!hash[upKey]){//如果是空的
       
       var  userInputContent = prompt("还没有添加内容呢");
-      hash[upKey] = userInputContent;
-      localStorage.setItem('hash',JSON.stringify(hash));
+      addInLocal(upKey,userInputContent);
+      faviconImg(upKey);
+
+
     }else{//如果已经添加了内容
 
-    var sure = confirm('你确定要删除吗');
+      var sure = confirm('你确定要删除吗');
       
     if(sure){
 
-      hash[upKey] = undefined;
+      addInLocal(upKey,userInputContent);
+      console.log(upKey);
+      faviconImg(upKey);
 
-      localStorage.setItem('hash',JSON.stringify(hash));
-
-
-    } 
-    }
+     } 
     
+    }
+  
   }else{
     //检测当前页面是否是undefined
     if(!hash[key]){
 
       var  userInputContent = prompt("这个按钮是空的哦");
-      hash[key] = userInputContent;
-      localStorage.setItem('hash',JSON.stringify(hash));
+      addInLocal(key,userInputContent);
+      faviconImg(key);
 
     }else{
+
       window.open("//"+website,"_blank");
 
     }
 
-
-  }
-  
-  //location.href = "//"+website; 模拟用户在地址栏输入的内容
-  
+  } 
+  //location.href = "//"+website; 模拟用户在地址栏输入的内容 
 }
 
 
 
+function addInLocal(){
 
+  //将相应内容存储到hash，并将hash存储到本地
+    
+    hash[arguments[0]] = arguments[1];    
+    localStorage.setItem('hash',JSON.stringify(hash));
+  
+
+}
+
+function faviconImg(){
+
+  //修改小图片
+if(arguments[1]){
+
+  var img = document.createElement("img");
+  img.src =  "http://" + hash[arguments[0]] + "/favicon.ico";
+  arguments[1].appendChild(img);
+
+}else{
+
+  var a = document.getElementById(arguments[0]); 
+  var img2 = a.nextElementSibling;
+  img2.src =  "http://" + hash[arguments[0]] + "/favicon.ico";
+
+}
+
+}
 
 </script>
 
