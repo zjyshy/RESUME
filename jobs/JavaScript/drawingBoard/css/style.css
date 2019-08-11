@@ -19,6 +19,8 @@ body{
 header{
 
   position: fixed;
+  height:80px;
+  z-index: 999;
 }
 
 header .wrapper{
@@ -34,7 +36,7 @@ header .wrapper{
 
 .Toolbar{
 
-
+  display: flex;
   align-items: center;
   height: 100%;
   box-sizing: border-box;
