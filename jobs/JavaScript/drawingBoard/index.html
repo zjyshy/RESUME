@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="js/main.js"></script>
+  <script src="//at.alicdn.com/t/font_1344777_wy9wpawvvzo.js"></script>
+  <script src="js/jscolor.js"></script>
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+
+
+</head>
+<body>
+  
+
+  <header>
+
+    <div class="wrapper">
+      <div class="Toolbar">
+
+          <svg class="icon pen orange" aria-hidden="true">
+             <use xlink:href="#icon-pen"></use>
+            
+          </svg>
+          <svg class="icon " aria-hidden="true">
+            <use xlink:href="#icon-xialacaidan"></use>
+           
+         </svg>
+
+
+         <input class="jscolor" value="000">
+         <div>
+          <input type="range" list="tickmarks" min="1"max = "11" class="penSize">
+
+          <datalist id="tickmarks">
+           
+            <option value="1">
+            <option value="2">
+            <option value="3">
+            <option value="4">
+            <option value="5">
+            <option value="6">
+            <option value="7">
+            <option value="8">
+            <option value="9">
+            <option value="10">
+            <option value="11">
+            </datalist>
+         </div>
+
+         <svg class="icon rubber" aria-hidden="true">
+
+            <use xlink:href="#icon-rubber"></use>
+          </svg>
+
+          <div>
+            <input type="range" list="tickmarks" max="10" class="rubberSize">
+  
+            <datalist id="tickmarks">
+              <option value="0" label="0">
+              <option value="1">
+              <option value="2">
+              <option value="3">
+              <option value="4">
+              <option value="5" label="5">
+              <option value="6">
+              <option value="7">
+              <option value="8">
+              <option value="9">
+              <option value="10"label="10">
+            </datalist>
+           </div>
+         <svg class="icon save" aria-hidden="true">
+            <use xlink:href="#icon-save"></use>
+         </svg>
+         <svg class="icon clear " aria-hidden="true">
+            <use xlink:href="#icon-clear"></use>
+         </svg>
+      
+      
+      </div>
+    </div>
+  </header>
+
+
+  <canvas id="canvas" width = 100%; height=500; >
+
+
+  </canvas>
+
+
+
+
+
+</body>
+</html>
