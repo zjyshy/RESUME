@@ -85,7 +85,7 @@ header .wrapper{
 
 }
 
-canvas {
+#canvas {
   
   display: block;
   position: fixed;
