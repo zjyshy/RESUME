@@ -52,13 +52,14 @@
     
     var p="pen";
     var r = "rubber";
- 
+    var l = "line";
+
     var model = {a:p};//这里定义为对象是为了在传递参数的时候传的是指针而不是变量的值
 
    
     pen(model);
     rubber(model);
- 
+    line(model);
 
   
     
@@ -80,6 +81,10 @@
           lineFlag = true;
           ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
 
+        }else if(model.a = l){
+          ctx.beginPath();
+          ctx.moveTo(x,y);
+
         }
       }
       
@@ -91,7 +96,6 @@
           if(model.a == p){
 
         
-       
          
             ctx.lineTo(x,y);
             ctx.stroke();
@@ -103,9 +107,18 @@
           }
         }
 
-      target.onmouseup = function(){
+      target.onmouseup = function(pos){
 
         lineFlag = false;
+        
+        
+        if(model.a == l){
+          var x = pos.clientX;
+          var y = pos.clientY;
+          ctx.lineTo(x,y);
+          ctx.stroke();
+
+        }
       }
 
 
@@ -195,6 +208,22 @@
   }
 
 
+
+  
+function line(model){
+
+  var lineButton = document.getElementsByClassName("line");
+  lineButton[0].onclick = function(){
+
+
+   model.a = "line";
+  }
+
+}
+
+
+
+  
   
 
 
