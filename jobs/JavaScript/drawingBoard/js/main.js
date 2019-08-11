@@ -33,8 +33,7 @@
     canvasSize();
     tool();
     clearCanvas();
-    
-  downloadCavans();
+    downloadCavans();
   
   }
 
@@ -65,61 +64,145 @@
     
     
       var lineFlag = false;
-      target.onmousedown = function(pos){
-       
-        var x = pos.clientX;
-        var y = pos.clientY;
-        if(model.a ==p){
-         
-          lineFlag = true;
-          pen(model);
 
-          ctx.beginPath();
-          ctx.moveTo(x,y);
-        
-        }else if(model.a == r){
-          lineFlag = true;
-          ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
-
-        }else if(model.a = l){
-          ctx.beginPath();
-          ctx.moveTo(x,y);
-
-        }
-      }
       
-      target.onmousemove = function(pos){
-        if(lineFlag){
 
+
+      if(document.body.ontouchstart ===undefined){
+
+      
+        target.onmousedown = function(pos){
+       
           var x = pos.clientX;
           var y = pos.clientY;
-          if(model.a == p){
-
+          if(model.a ==p){
+           
+            lineFlag = true;
+            pen(model);
+  
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+          
+          }else if(model.a == r){
+            lineFlag = true;
+            ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
+  
+          }else if(model.a = l){
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+  
+          }
+        }
         
-         
+        target.onmousemove = function(pos){
+          if(lineFlag){
+  
+            var x = pos.clientX;
+            var y = pos.clientY;
+            if(model.a == p){
+  
+          
+           
+              ctx.lineTo(x,y);
+              ctx.stroke();
+           
+            }else if(model.a == r){
+              ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
+  
+              }
+            }
+          }
+  
+        target.onmouseup = function(pos){
+  
+          lineFlag = false;
+          
+          
+          if(model.a == l){
+            var x = pos.clientX;
+            var y = pos.clientY;
             ctx.lineTo(x,y);
             ctx.stroke();
-         
-          }else if(model.a == r){
-            ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
+  
+          }
+        }
+      }else{
 
-            }
+
+        var touchendX = undefined;
+        var touchendY = undefined;
+
+        target.ontouchstart =function(pos){
+
+       
+          var x = pos.touches[0].clientX;
+          var y = pos.touches[0].clientY;
+          if(model.a ==p){
+           
+            lineFlag = true;
+            pen(model);
+  
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+          
+          }else if(model.a == r){
+            lineFlag = true;
+            ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
+  
+          }else if(model.a = l){
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.strokeStyle = "#000000";
+  
           }
         }
 
-      target.onmouseup = function(pos){
+        target.ontouchmove = function(pos){
 
-        lineFlag = false;
-        
-        
-        if(model.a == l){
-          var x = pos.clientX;
-          var y = pos.clientY;
-          ctx.lineTo(x,y);
-          ctx.stroke();
+          touchendX = pos.touches[0].clientX;
+          touchendY = pos.touches[0].clientY;
+          if(lineFlag){
+         
+            var x = pos.touches[0].clientX;
+            var y = pos.touches[0].clientY;
+       
+            if(model.a == p){
+  
+              
+           
+              ctx.lineTo(x,y);
+            
+              ctx.stroke();
+           
+            }else if(model.a == r){
+              ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
+  
+              }
+            }
+
 
         }
+
+        target.ontouchend = function(pos){
+
+
+          lineFlag = false;
+          
+         
+          
+          if(model.a == l){
+          
+            ctx.lineTo(touchendX,touchendY);
+            ctx.stroke();
+            
+  
+          }
+        }
+
+        
       }
+
+
 
 
   }
