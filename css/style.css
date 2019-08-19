@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   border: 0;
-  color: black;
   text-decoration: none;
   box-sizing: inherit;
 }
@@ -14,9 +13,12 @@ body{
   position: fixed;
   top: 0;
   z-index: 10;
+  color: #b7b7b7;
+
+transition: all 1s;
 }
 
-.topNavBar ul{
+.topNavBar nav>ul{
   list-style-type: none;
   padding-right: 16px;
 }
@@ -28,6 +30,11 @@ body{
 }
 
 
+.topNavBar nav ul{
+
+  list-style: none;
+
+}
 .clearfix::after {
   content: "";
   display: block;
@@ -35,36 +42,86 @@ body{
 }
 
 
-.topNavBar  li {
+
+.topNavBar nav>ul>li {
   float: left;
   margin: 0px 17px;
-  
+  position: relative;
 }
 
-.topNavBar  li a{
+.topNavBar li a{
  
   display: block;
   padding:5px 0;
   border-top: 3px solid transparent;
   border-bottom:3px solid transparent;
-  color: #b7b7b7;
+  color: inherit;
   font-size: 12px;
 }
 
-.topNavBar  li a:hover{
+.topNavBar li a::after{
 
-  border-bottom:3px solid orange;
+  content:"";
+  display: block;
+  width: 0px;
+  height: 3px;
+  margin-top: 3px;
+  border-radius: 2px;
+
+  background-color: orange;
+  transition: all .3s;
 }
 
 
+.topNavBar a.active::after{
 
+  width: 100%;
+
+}
+
+
+.topBarDropDownMenu{
+  background-color: rgba(255,255,255, 0.5);
+  display: none;
+  position: absolute;
+  right: 0;
+ }
+
+.topBarDropDownMenu>li{
+
+  border-bottom: 1px solid #3d4451;
+  padding:0 5px; 
+  min-width: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.topBarDropDownMenu.active{
+  display: block;
+
+  animation: topBarMenuGlide 1s;
+}
+
+@keyframes topBarMenuGlide{
+
+  0%{
+    margin-right: 100%;
+    opacity: 0;
+  }
+
+  100%{
+    margin-right: 0;
+    opacity: 1;
+
+  }
+}
 
 .logo{
   
     padding-left: 16px;
     font-size: 24px;
     font-family: 'Arial Black';
-
+    padding: 4px;
 }
 
 .hy{
@@ -425,3 +482,12 @@ main .foot a:hover{
   margin-top: 27px;
 }
 
+
+.sticky{
+
+  background-color: #fff;
+  height: 50px;
+  padding: 5px; 
+  color: #000;
+  box-shadow: 0 -5px  10px 0 #000;
+}
