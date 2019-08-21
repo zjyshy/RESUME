@@ -70,7 +70,6 @@
 	}
 
 	function topBarSticky(viewH,topBar){
-		console.log(topBar);
 		if(viewH>30){
 
 			topBar[0].classList.add('sticky');
