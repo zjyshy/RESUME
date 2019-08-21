@@ -79,7 +79,10 @@ transition: all 1s;
 
 }
 
+.topNavBar a.activeR::after{
 
+  width: 100%;
+}
 .topBarDropDownMenu{
   background-color: rgba(255,255,255, 0.5);
   display: none;
@@ -328,6 +331,7 @@ main .foot a:hover{
 .skillWrapper{
   max-width:940px;
   margin: 20px auto;
+  transform: translateY(300px);
 }
 
 .skill{
@@ -357,45 +361,55 @@ main .foot a:hover{
 
 }
 
+
+.skillWrapper.appear .skill>li>div div{
+
+
+  width: 100%;
+
+}
 .skill>li>div{
   background-color: #FAE1E1;
 }
 .skill>li>div div{
   border: 2px solid red;
+  width:1%;
+  transition: all 2s;
+
 }
-.skill>li:nth-child(1)>div div{
+.skill>li:nth-child(1)>div{
   
-  width: 40%; 
+  padding-right: 200px;
 }
 
 
 
-.skill>li:nth-child(2)>div div{
-  width: 20%; 
+.skill>li:nth-child(2)>div{
+  padding-right: 300px;
 }
 
 
-.skill>li:nth-child(3)>div div{
-  width: 10%; 
+.skill>li:nth-child(3)>div{
+  padding-right: 400px;
 }
 
-.skill>li:nth-child(4)>div div{
-  width: 0%; 
+.skill>li:nth-child(4)>div{
+  padding-right: 350px;
 }
 
-.skill>li:nth-child(5)>div div{
-  width: 0%; 
+.skill>li:nth-child(5)>div{
+  padding-right: 409px;
 }
 
-.skill>li:nth-child(6)>div div{
-  width: 0; 
+.skill>li:nth-child(6)>div{
+  padding-right: 409px;
 }
 
 
 .jobs{
   text-align: center;
   
-
+  transform: translateY(300px);
 }
 .jobs h2{
 
@@ -491,3 +505,40 @@ main .foot a:hover{
   color: #000;
   box-shadow: 0 -5px  10px 0 #000;
 }
+
+
+
+#userCardforJump{
+
+  animation: up ease-in .7s;
+
+}
+
+
+.skillWrapper.appear{
+transform: translateY(0);
+
+animation: up ease-in .7s;
+}
+
+.jobs.appear{
+  transform: translateY(0);
+
+  animation: up ease-in .7s;
+}
+
+
+@keyframes up{
+
+  0%{
+    transform: translateY(300px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+

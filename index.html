@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="css/style.css">
   
   <script src="//at.alicdn.com/t/font_1321218_4hw3ky5mog7.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.4.0/Tween.min.js"></script>
   <script src="JavaScript/main.js"></script>
+  
 
   <style type="text/css">
     .icon {
@@ -91,7 +93,7 @@
    
     <main>
         <div class="banner" ></div>
-      <div class="useCard clearfix" id="userCardforJump">
+      <div data-x = "xx" class="useCard clearfix" id="userCardforJump">
         <div class="profilePicture"></div>
         <div class="me">
           <div class="hello">
@@ -148,8 +150,8 @@
   </div>
     
     <p></p>
-    <section class="skillWrapper" >
-      <h2 id="skillforJump">技能</h2>
+    <section data-x = "xx" class="skillWrapper"id="skillforJump" >
+      <h2  >技能</h2>
 
     <ol class="skill clearfix">
       <li>
@@ -179,8 +181,8 @@
     </ol>
 
     </section>
-    <section class="jobs" >
-      <h2 id="jobsforJump">作品集</h2>
+    <section data-x = "xx" class="jobs" id="jobsforJump">
+      <h2  >作品集</h2>
       <nav class="jobsNav">
         <ul class="clearfix">
           <li id="allJobs">ALL</li>
