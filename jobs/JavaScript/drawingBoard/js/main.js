@@ -47,34 +47,29 @@
 
 
   function tool(){
-     
+    //这个函数就是监听鼠标和手指动作  //这个函数是可以画各种图形的工具
     
     var p="pen";
     var r = "rubber";
     var l = "line";
-
+    
     var model = {a:p};//这里定义为对象是为了在传递参数的时候传的是指针而不是变量的值
 
    
     pen(model);
     rubber(model);
     line(model);
-
   
-    
-    
       var lineFlag = false;
 
-      
-
-
-      if(document.body.ontouchstart ===undefined){
+      if(document.body.ontouchstart === undefined){
 
       
         target.onmousedown = function(pos){
        
           var x = pos.clientX;
           var y = pos.clientY;
+
           if(model.a ==p){
            
             lineFlag = true;
@@ -89,7 +84,9 @@
   
           }else if(model.a = l){
             ctx.beginPath();
+            ctx.arc(x,y,0.5,Math.PI*2,1,true);
             ctx.moveTo(x,y);
+          
   
           }
         }
@@ -99,16 +96,22 @@
   
             var x = pos.clientX;
             var y = pos.clientY;
+
             if(model.a == p){
-  
-          
            
               ctx.lineTo(x,y);
               ctx.stroke();
            
             }else if(model.a == r){
+
               ctx.clearRect(x,y,rubberSize[0].value*2,rubberSize[0].value*2);
   
+              }else if(model.a === l){
+
+                ctx.restore();
+                ctx.strokeStyle = "#000000";
+                ctx.lineTo(x,y);
+
               }
             }
           }
@@ -161,17 +164,15 @@
 
           touchendX = pos.touches[0].clientX;
           touchendY = pos.touches[0].clientY;
+
           if(lineFlag){
          
             var x = pos.touches[0].clientX;
             var y = pos.touches[0].clientY;
        
             if(model.a == p){
-  
               
-           
               ctx.lineTo(x,y);
-            
               ctx.stroke();
            
             }else if(model.a == r){
@@ -179,8 +180,6 @@
   
               }
             }
-
-
         }
 
         target.ontouchend = function(pos){
@@ -198,14 +197,8 @@
   
           }
         }
-
-        
       }
-
-
-
-
-  }
+    }
   
   function canvasSize(){
 
@@ -286,22 +279,17 @@
   
 
     }
-
-
   }
 
 
-
-  
 function line(model){
 
   var lineButton = document.getElementsByClassName("line");
   lineButton[0].onclick = function(){
 
-
    model.a = "line";
-  }
 
+  }
 }
 
 
