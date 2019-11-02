@@ -1,0 +1,15 @@
+body{
+
+  width: 950px;
+  margin: 0 auto;
+}
+p,a{
+  text-align: center;
+}
+
+.xiaZaiLianJie{
+
+  font-size: 30px;
+  color: red;
+
+}
