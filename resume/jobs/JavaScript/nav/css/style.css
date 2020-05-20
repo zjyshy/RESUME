@@ -1,0 +1,96 @@
+body{
+
+  background-image: url(../img/sky4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+main{
+
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.wrapper{
+  background-color: rgba(000 , 000, 000, 0.3);
+  padding: 10px;
+  border-radius: 20px;
+}
+.row{
+  box-sizing: border-box;
+}
+kbd{
+
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #FFFFFF;
+  background: -moz-linear-gradient(top, #FFFFFF 0%, #F3F5F7 100%, #F3F5F7 100%);
+  background: -webkit-linear-gradient(top, #FFFFFF 0%, #F3F5F7 100%, #F3F5F7 100%);
+  background: linear-gradient(to bottom, #FFFFFF 0%, #F3F5F7 100%, #F3F5F7 100%);
+  border-radius: 5px;
+  margin: 7px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 0px 1px rgba(222, 222 , 222, 0.7) ,2px 0px 2px -1px #a8aaad,-2px 0px 2px -1px #a8aaad,0px 2.7px 0px 2.1px #777,0px 3px 0px 3px #97999b,0px 3.3px 0px 3.5px #777;
+  position: relative;
+  border: none;
+}
+
+kbd:hover{
+  box-shadow:   0px 3px 0px 1px #f3f5f8 ,inset 0px 2px 0px 0px #777 ,2px 0px 2px -1px #a8aaad,-2px 0px 2px -1px #a8aaad,0px 2.7px 0px 2.1px #777,0px 3px 0px 3px #97999b,0px 3.3px 0px 3.5px #777; 
+
+
+}
+
+.kbdName ,kbd button{
+
+  position: absolute;
+
+}
+
+kbd button{
+
+  width: 12px;
+  transform: scale(1, 0.8); 
+   right: 3px;
+  top: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  display: none;
+}
+
+
+.kbdName{
+  top: 12px;
+  left: 16px;
+  font-family:  Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  
+  color: rgba(000, 000, 000, .7);
+}
+
+kbd img{
+
+  position: absolute;
+  height: 15px;
+  width: 15px;
+}
+
+kbd:hover img{
+  top:2px;
+
+}
+kbd:hover .kbdName{
+  top :14px;
+}
+
+kbd:hover button{
+  top:2px;
+  display: block;
+}
