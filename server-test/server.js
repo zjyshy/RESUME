@@ -26,12 +26,14 @@ var server = http.createServer(function (request, response) {
   if (path === "/") {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/html;charset=utf-8");
-    response.write(`二哈\n`);
+    let data = fs.readFileSync("index.html");
+    response.write(data.toString());
     response.end();
-  } else if (path === "/x") {
+  } else if (path === "/style.css") {
     response.statusCode = 200;
     response.setHeader("Content-Type", "text/css;charset=utf-8");
-    response.write(`body{color: red;}`);
+    let data = fs.readFileSync("style.css");
+    response.write(data.toString());
     response.end();
   } else {
     response.statusCode = 404;
