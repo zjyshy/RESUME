@@ -24,6 +24,8 @@
     //****************
     canvas.width = document.documentElement.clientWidth;
     canvas.height = document.documentElement.clientHeight;
+    const h1 = document.getElementsByTagName("h1");
+    console.log(h1[0]);
     window.onresize = () => {
       canvas.width = document.documentElement.clientWidth;
       canvas.height = document.documentElement.clientHeight;
@@ -33,7 +35,9 @@
     var isTouchDevice = "ontouchstart" in document.documentElement;
     if (isTouchDevice) {
       canvas.ontouchstart = (e) => {
+        h1[0].setAttribute("hidden", "true");
         console.log(1);
+
         ctx.beginPath();
         ctx.moveTo(e.touches[0].clientX, e.touches[0].clientY);
       };
@@ -46,6 +50,7 @@
 
     let last = [0, 0];
     canvas.onmousedown = (e) => {
+      h1[0].setAttribute("hidden", "true");
       ctx.lineWidth = 5;
       ctx.beginPath();
 

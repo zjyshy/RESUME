@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 canvas {
   vertical-align: middle;
   /*canvas是inline所以基线（base-line）默认对齐，会导致页面下方有缝隙*/
