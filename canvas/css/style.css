@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  vertical-align: middle;
+  /*canvas是inline所以基线（base-line）默认对齐，会导致页面下方有缝隙*/
+}
